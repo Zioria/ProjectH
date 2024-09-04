@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace ProjectH
 {
+    
     public class GameGrid : MonoBehaviour
     {
         public int columnLength, rowLength;
