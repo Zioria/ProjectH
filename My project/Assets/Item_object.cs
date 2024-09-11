@@ -6,7 +6,7 @@ namespace ProjectH
 {
     public class Item_object : MonoBehaviour
     {
-        public  item_sprite;
+        
 
        private void Update()
         {
