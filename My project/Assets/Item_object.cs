@@ -6,16 +6,11 @@ namespace ProjectH
 {
     public class Item_object : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
+        public  item_sprite;
 
-        // Update is called once per frame
-        void Update()
+       private void Update()
         {
-        
+            
         }
     }
 }
