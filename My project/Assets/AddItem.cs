@@ -8,9 +8,23 @@ namespace ProjectH
     {
         public Inventory_Player inventory; 
         [SerializeField] GameObject Seeds;
-        
 
-       
+        [SerializeField]
+        private string itemName;
+
+        [SerializeField]
+        private int quantity;
+
+        [SerializeField]
+        private Sprite sprite;
+
+        private InventoryManager inventoryManager;
+
+        public void Start()
+        {
+                inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
+
+        }
 
         public void Additem()
         {
@@ -23,6 +37,13 @@ namespace ProjectH
                     break;
                 }
             }
+        }
+
+        public void Additem_New()
+        {
+
+            inventoryManager.AddItem(itemName, quantity, sprite);
+
         }
     }
 }
