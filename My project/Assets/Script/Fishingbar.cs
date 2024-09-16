@@ -45,7 +45,7 @@ namespace ProjectH
 
             if(targetTime <= 0.0f)
             {
-                transform.localPosition = new Vector3(-0.1224456f, 1.0f, -3.835f);
+                transform.localPosition = new Vector3(-0.1224456f, 1, -3.835f);
                 onFish = false;
                 playerS.fishGameLossed();
                 Destroy(GameObject.Find("bobber(Clone)"));
@@ -53,7 +53,7 @@ namespace ProjectH
             }
             if(targetTime >= 8.0f)
             {
-                transform.localPosition = new Vector3(-0.1224456f, 1.0f, -3.835f);
+                transform.localPosition = new Vector3(-0.1224456f, 1, -3.835f);
                 onFish = false;
                 playerS.fishGameWon();
                 Destroy(GameObject.Find("bobber(Clone)"));

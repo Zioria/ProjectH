@@ -90,7 +90,7 @@ namespace ProjectH
 
             if(Input.GetKeyDown(KeyCode.P) && timetillcatch <= 3)
             {
-                playeranim.Play("plaerStill");
+                playeranim.Play("Animation_Idle");
                 poleback = false;
                 throwbobber = false;
                 isfishing = false;
@@ -110,7 +110,7 @@ namespace ProjectH
 
         public void fishGameLossed()
         {
-            playeranim.Play("playerStill");
+            playeranim.Play("Animation_Idle");
             Startfishgame.SetActive(false);
             poleback = false;
             throwbobber = false;
