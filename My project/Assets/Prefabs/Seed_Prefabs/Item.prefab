@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Seed_Galic
-  quantity: 3
+  quantity: 1
   sprite: {fileID: 21300000, guid: d12d637f77e00ba4d9b82d76c42d0053, type: 3}
 --- !u!1 &8814810093637137973
 GameObject:

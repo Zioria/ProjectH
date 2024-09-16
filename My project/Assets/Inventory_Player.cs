@@ -7,7 +7,6 @@ namespace ProjectH
     public class Inventory_Player : MonoBehaviour
     {
 
-        public bool[] isFull;
-        public GameObject[] slots;
+        
     }
 }

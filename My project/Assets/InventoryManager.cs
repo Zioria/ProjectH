@@ -8,6 +8,9 @@ namespace ProjectH
     {
         public GameObject InventoryMenu;
         private bool menuActivated;
+        public ItemSlot[] itemSlot;
+
+
         // Start is called before the first frame update
         void Start()
         {
@@ -33,9 +36,35 @@ namespace ProjectH
 
         }
 
-        public void AddItem(string itemName, int quantity, Sprite itemSprite)
+        public int AddItem(string itemName, int quantity, Sprite itemSprite)
         {
-            Debug.Log("itemName = " + itemName + "quantity = " + quantity + "itemSprite = " + itemSprite);
+            for (int i = 0; i < itemSlot.Length; i++)
+            {
+                if (itemSlot[i].isFull == false && itemSlot[i].itemName == itemName || itemSlot[i].quantity == 0)
+                {
+                    int lefOverItem = itemSlot[i].AddItem(itemName, quantity, itemSprite);
+                    if (lefOverItem > 0)
+                    {
+                        lefOverItem = AddItem(itemName, quantity, itemSprite);
+                    }
+                    return lefOverItem;
+                }
+
+            }
+            return quantity;
+
+        }
+
+
+
+        public void DeselectAllSlots()
+        {
+            for (int i = 0; i < itemSlot.Length; i++)
+            {
+                itemSlot[i].selectedShader.SetActive(false);
+                itemSlot[i].thisItemSelected = false;
+
+            }
         }
     }
 }
