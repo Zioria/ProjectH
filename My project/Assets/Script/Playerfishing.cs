@@ -101,7 +101,7 @@ namespace ProjectH
         public void fishGameWon()
         {
             playeranim.Play("playerWonfish");
-            Startfishgame.SetActive(Startfishgame);
+            Startfishgame.SetActive(false);
             poleback = false;
             throwbobber = false;
             isfishing = false;
@@ -111,7 +111,7 @@ namespace ProjectH
         public void fishGameLossed()
         {
             playeranim.Play("playerStill");
-            Startfishgame.SetActive(Startfishgame);
+            Startfishgame.SetActive(false);
             poleback = false;
             throwbobber = false;
             isfishing = false;
