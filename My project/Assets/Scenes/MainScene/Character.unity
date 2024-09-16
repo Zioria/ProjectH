@@ -2172,7 +2172,7 @@ MonoBehaviour:
   isfishing: 0
   poleback: 0
   throwbobber: 0
-  fishingpoint: {fileID: 0}
+  fishingpoint: {fileID: 1546270824}
   bobber: {fileID: 0}
   targetTime: 0
   savetargettime: 0
