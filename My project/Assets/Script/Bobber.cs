@@ -26,10 +26,10 @@ namespace ProjectH
                 bobberAnim.Play("bobberFish");
             }
 
-            if(Input.GetKeyDown(KeyCode.P) && bobberTime <= 3)
-            {
-                Destroy(gameObject);
-            }
+            //if(Input.GetKeyDown(KeyCode.P) && bobberTime <= 3)
+           // {
+             //   Destroy(gameObject);
+           // }
             
             if(gameIsOver == true)
             {

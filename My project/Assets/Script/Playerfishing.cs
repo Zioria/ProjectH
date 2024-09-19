@@ -13,13 +13,13 @@ namespace ProjectH
         public Transform fishingpoint;
         public GameObject bobber;
 
-        public float targetTime;
+        public float targetTime = 0.0f;
         public float savetargettime;
         public float extrabobberdistance;
 
         public GameObject Startfishgame;
 
-        public float timetillcatch;
+        public float timetillcatch = 0.0f;
         public bool winneranim;
 
         // Start is called before the first frame update
@@ -90,7 +90,7 @@ namespace ProjectH
 
             if(Input.GetKeyDown(KeyCode.P) && timetillcatch <= 3)
             {
-                playeranim.Play("Animation_Idle");
+                playeranim.Play("Animation_Idle 1");
                 poleback = false;
                 throwbobber = false;
                 isfishing = false;
@@ -110,7 +110,7 @@ namespace ProjectH
 
         public void fishGameLossed()
         {
-            playeranim.Play("Animation_Idle");
+            playeranim.Play("Animation_Idle 1");
             Startfishgame.SetActive(false);
             poleback = false;
             throwbobber = false;

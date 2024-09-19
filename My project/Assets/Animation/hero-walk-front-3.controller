@@ -119,13 +119,13 @@ AnimatorStateMachine:
     m_Position: {x: 90, y: 190, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7621421600364318985}
-    m_Position: {x: 90, y: 270, z: 0}
+    m_Position: {x: 40, y: 270, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1360923663718620953}
-    m_Position: {x: 660, y: 400, z: 0}
+    m_Position: {x: 500, y: 270, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8283883126435328832}
-    m_Position: {x: 350, y: 260, z: 0}
+    m_Position: {x: 390, y: 410, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8904146740958967490}
     m_Position: {x: 470, y: 430, z: 0}
@@ -203,25 +203,25 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Vertical
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Speed
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Won
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -278,9 +278,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0
-  m_TransitionOffset: 1.0093626
-  m_ExitTime: 0.000000017394283
+  m_TransitionDuration: 0.26666236
+  m_TransitionOffset: 0
+  m_ExitTime: 0.00000009969575
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0

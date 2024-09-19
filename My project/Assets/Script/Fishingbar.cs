@@ -12,6 +12,11 @@ namespace ProjectH
         public float targetTime = 4.0f;
         public float saveTargetTime;
 
+        public GameObject Pole;
+        public GameObject Rope;
+        public GameObject fish1;
+        public GameObject fish2;
+    
         public GameObject Bar1;
         public GameObject Bar2;
         public GameObject Bar3;
@@ -45,15 +50,22 @@ namespace ProjectH
 
             if(targetTime <= 0.0f)
             {
-                transform.localPosition = new Vector3(-0.1224456f, 1, -3.835f);
+                transform.localPosition = new Vector3(-0.1224456f, 11, -3.835f);
                 onFish = false;
                 playerS.fishGameLossed();
+               // Pole.SetActive(false);
+                //Rope.SetActive(false);
+                //fish1.SetActive(false);
+               // fish2.SetActive(false);
+                //bobber.SetActive(false);
+                
+                
                 Destroy(GameObject.Find("bobber(Clone)"));
                 targetTime = 4.0f;
             }
             if(targetTime >= 8.0f)
             {
-                transform.localPosition = new Vector3(-0.1224456f, 1, -3.835f);
+                transform.localPosition = new Vector3(0.02862828f, 17.04709f, -3.835f);
                 onFish = false;
                 playerS.fishGameWon();
                 Destroy(GameObject.Find("bobber(Clone)"));
