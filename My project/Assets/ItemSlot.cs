@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System;
 
 namespace ProjectH
 {
@@ -14,6 +15,7 @@ namespace ProjectH
         public int quantity;
         public Sprite itemSprite;
         public bool isFull;
+        public Sprite emptySprite;
 
         [SerializeField]
         private int maxNumberOfItem;
@@ -85,9 +87,36 @@ namespace ProjectH
 
         public void OnLeftClick()
         {
-            inventoryManager.DeselectAllSlots();
-            selectedShader.SetActive(true);
-            thisItemSelected = true;
+            if (thisItemSelected)
+            {
+                bool usable = inventoryManager.UseItem(itemName);
+                if (usable)
+                {
+
+
+                    this.quantity -= 1;
+                    quantityText.text = this.quantity.ToString();
+
+                    if (this.quantity <= 0)
+                    {
+                        EmtySlot();
+                    }
+                }
+            }
+            else
+            {
+
+
+                inventoryManager.DeselectAllSlots();
+                selectedShader.SetActive(true);
+                thisItemSelected = true;
+            }
+        }
+
+        private void EmtySlot()
+        {
+            quantityText.enabled = false;
+            itemImage.sprite = emptySprite;
         }
 
         public void OnRightClick()

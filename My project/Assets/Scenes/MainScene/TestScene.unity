@@ -410,6 +410,8 @@ MonoBehaviour:
   - {fileID: 937521826}
   - {fileID: 582548257}
   - {fileID: 55887881}
+  itemSOs:
+  - {fileID: 11400000, guid: c4d91cf563517224bbd1e734abb9c7bc, type: 2}
 --- !u!224 &101779955 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 374760732954491732, guid: 661eecef04957ca43a5910cbabc6447c, type: 3}

@@ -10,6 +10,7 @@ namespace ProjectH
         private bool menuActivated;
         public ItemSlot[] itemSlot;
 
+        public ItemSO[] itemSOs;
 
         // Start is called before the first frame update
         void Start()
@@ -34,6 +35,19 @@ namespace ProjectH
             }
 
 
+        }
+
+        public bool UseItem(string itemName)
+        {
+            for (int i = 0; i < itemSOs.Length; i++)
+            {
+                if (itemSOs[i].itemname == itemName)
+                {
+                    bool usable = itemSOs[i].UseItem();
+                    return usable;
+                }
+            }
+            return false;
         }
 
         public int AddItem(string itemName, int quantity, Sprite itemSprite)
