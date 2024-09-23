@@ -97,7 +97,7 @@ namespace ProjectH
                 playeranim.Play("playerFishing");
             }
 
-            if(Input.GetKeyDown(KeyCode.P) && timetillcatch <= 1)
+            if(Input.GetKeyDown(KeyCode.P) && timetillcatch <= 0)
             {
                 playeranim.Play("Animation_Idle 1");
                 Startfishgame.SetActive(false);

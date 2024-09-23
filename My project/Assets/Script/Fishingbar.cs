@@ -46,11 +46,13 @@ namespace ProjectH
                 rb.AddForce(Vector3.down, ForceMode.Impulse);
                 if(Input.GetKey(KeyCode.T))
                     { 
-                        playerS.fishGameWon();
+                        
                         rb.AddForce(Vector3.zero, ForceMode.Impulse);
+                        rb.AddForce(Vector3.down, ForceMode.Impulse);
                         transform.localPosition = new Vector3(-0.12613f, 11, -4.65791f);
                         Destroy(GameObject.Find("fish point(Clone)"));
                         Destroy(GameObject.Find("bobber(Clone)"));
+                        playerS.fishGameWon();
                         targetTime = 3.7f;    
                     }
                 //onFish = false;
@@ -62,7 +64,7 @@ namespace ProjectH
                 
                 if(Input.GetKey(KeyCode.T))
                 {   
-                    rb.AddForce(Vector3.zero, ForceMode.Impulse);
+                    rb.AddForce(Vector3.down, ForceMode.Impulse);
                     transform.localPosition = new Vector3(-0.12613f, 11, -4.65791f);
                     Destroy(GameObject.Find("fish point(Clone)"));
                     Destroy(GameObject.Find("bobber(Clone)"));
@@ -73,6 +75,7 @@ namespace ProjectH
             }
             if(targetTime <= 0.0f)
             {   
+                rb.AddForce(Vector3.down, ForceMode.Impulse);
                 rb.AddForce(Vector3.zero, ForceMode.Impulse); 
                 transform.localPosition = new Vector3(-0.12613f, 11, -4.65791f);
                 onFish = false;
@@ -80,6 +83,7 @@ namespace ProjectH
                 Destroy(GameObject.Find("bobber(Clone)"));
                 Destroy(GameObject.Find("fish point(Clone)"));
                 targetTime = 3.7f;
+                return;
             }
             rb.AddForce(Vector3.up, ForceMode.Impulse);
             if(targetTime == 3.7f)
