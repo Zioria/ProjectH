@@ -4,33 +4,16 @@ using UnityEngine;
 
 namespace ProjectH
 {
-    public class Item : MonoBehaviour
+    [CreateAssetMenu(menuName = "Scripttabla Object/ITEM")]
+    public class Item : ScriptableObject
     {
-        [SerializeField]
-        private string itemName;
+        public Sprite sprite;
+        public SlotTag itemTag;
 
-        [SerializeField]
-        private int quantity;
+        public bool isStackable;
+        public int maxStackSize;
 
-        [SerializeField]
-        private Sprite sprite;
-
-        private InventoryManager inventoryManager;
-
-        // Start is called before the first frame update
-        void Start()
-        {
-            inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
-
-        }
-
-        private void OnCollisionEnter(Collision collision)
-        {
-            if (collision.gameObject.tag == "Player")
-            {
-                inventoryManager.AddItem(itemName, quantity, sprite);
-                Destroy(gameObject);
-            }
-        }
+        [Header("equipment")]
+        public GameObject equipmentITEM;
     }
 }
