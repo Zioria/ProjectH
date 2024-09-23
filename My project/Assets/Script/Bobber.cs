@@ -21,9 +21,9 @@ namespace ProjectH
         void Update()
         {
             bobberTime += Time.deltaTime;
-            if(bobberTime >= 3)
+            if(bobberTime >= 10)
             {
-                bobberAnim.Play("bobberFish");
+                bobberAnim.Play("Animation_Idle 1");
             }
 
             //if(Input.GetKeyDown(KeyCode.P) && bobberTime <= 3)

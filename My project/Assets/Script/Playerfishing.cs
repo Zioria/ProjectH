@@ -59,7 +59,7 @@ namespace ProjectH
            // }
 
             if(Input.GetKeyUp(KeyCode.Space) && isfishing == false && winneranim == false)
-            {
+           {
                 poleback = false;
                 isfishing = true;
                 throwbobber = true;
