@@ -56,15 +56,7 @@ namespace ProjectH
             UpdateUI();
         }
 
-        public void RemoveQuantity(int amount)
-        {
-            Quantity -= amount;
-            if (Quantity <= 0)
-            {
-                Destroy(gameObject); // Remove the item if quantity reaches 0
-            }
-            UpdateUI();
-        }
+        
 
         void UpdateUI()
         {
@@ -86,24 +78,33 @@ namespace ProjectH
         {
             if (eventData.button == PointerEventData.InputButton.Left)
             {
-                Inventory.Singleton.SetCarriedItem(this);  // Regular left-click logic
+                // Regular left-click logic to carry the entire item
+                Inventory.Singleton.SetCarriedItem(this);
             }
             else if (eventData.button == PointerEventData.InputButton.Right && Quantity > 1 && myItem.isStackable)
             {
-                SplitItem();  // Right-click splits the item
+                // Pick exactly 1 item from the stack
+                PickOneItem();
+                Debug.Log("isClick");
+                Debug.Log(Quantity);
             }
         }
 
-        private void SplitItem()
+        private void PickOneItem()
         {
-            int splitAmount = Quantity / 2;  // Split half of the stack
-            if (splitAmount > 0)
-            {
-                RemoveQuantity(splitAmount);  // Reduce the quantity of the current item
+            RemoveQuantity(1);
+            Inventory.Singleton.SpawnInventoryItem(myItem, 1);
+        }
 
-                // Create a new item with the split amount
-                Inventory.Singleton.SpawnInventoryItem(myItem, splitAmount);
+        public void RemoveQuantity(int amount)
+        {
+            Quantity -= amount;
+            if (Quantity <= 0)
+            {
+                Destroy(gameObject); // Remove the item if quantity reaches 0
             }
+            UpdateUI();
+            Debug.Log("remove");
         }
     }
 }

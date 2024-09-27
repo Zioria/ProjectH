@@ -17,6 +17,7 @@ namespace ProjectH
         {
             if (eventData.button == PointerEventData.InputButton.Left)
             {
+                
                 // Check if there's no carried item
                 if (Inventory.carriedItem == null) return;
 
@@ -24,31 +25,19 @@ namespace ProjectH
                 if (myTag != SlotTag.None && Inventory.carriedItem.myItem.itemTag != myTag) return;
 
                 // Check if the item in this slot is the same and stackable
-                if (myItem != null && myItem.myItem == Inventory.carriedItem.myItem && myItem.myItem.isStackable)
+                if (myItem != null)
                 {
-                    int totalQuantity = myItem.Quantity + Inventory.carriedItem.Quantity;
-
-                    // If the total quantity is less than or equal to the max stack size, stack the items
-                    if (totalQuantity <= myItem.myItem.maxStackSize)
-                    {
-                        myItem.AddQuantity(Inventory.carriedItem.Quantity);
-                        Destroy(Inventory.carriedItem.gameObject); // Destroy the carried item
-                        Inventory.carriedItem = null; // Reset carried item
-                    }
-                    else
-                    {
-                        // Otherwise, fill up the stack and leave the remainder
-                        int remainingQuantity = totalQuantity - myItem.myItem.maxStackSize;
-                        myItem.AddQuantity(myItem.myItem.maxStackSize - myItem.Quantity);
-                        Inventory.carriedItem.Quantity = remainingQuantity;
-                    }
+                    // Swap the items
+                    Inventory_Item tempItem = myItem;
+                    SetItem(Inventory.carriedItem);  // Place carried item in this slot
+                    Inventory.Singleton.SetCarriedItem(tempItem);  // Now carry the item that was in this slot
                 }
                 else
                 {
-                    // Otherwise, set the item in the slot
-                    SetItem(Inventory.carriedItem);
+                    SetItem(Inventory.carriedItem);  // Just place the carried item in this slot
                 }
             }
+            
         }
 
         public void SetItem(Inventory_Item item)
@@ -68,5 +57,4 @@ namespace ProjectH
             { Inventory.Singleton.EquipEquipment(myTag, myItem); }
         }
       }
-
     }

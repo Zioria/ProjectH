@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace ProjectH
@@ -49,6 +50,18 @@ namespace ProjectH
             if (carriedItem == null) return;
 
             carriedItem.transform.position = Input.mousePosition;
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                // Check if the item was dropped over a valid slot, otherwise return to original slot
+                if (!EventSystem.current.IsPointerOverGameObject())
+                {
+                    // No valid slot, return item to original slot
+                    carriedItem.activeSlot.SetItem(carriedItem);
+                }
+            }
+            
+
         }
 
         public void ToggleInventory()
