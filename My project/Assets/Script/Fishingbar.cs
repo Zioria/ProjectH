@@ -90,8 +90,14 @@ namespace ProjectH
             {
                 //transform.localPosition = new Vector3(-0.12613f, 11, -4.65791f);
                 onFish = false;
+                Destroy(GameObject.Find("fish point(Clone)"));
                    
             }
+            //if(Input.GetKeyDown(KeyCode.P))
+            //{
+               // Destroy(GameObject.Find("fish point(Clone)"));
+               // transform.localPosition = new Vector3(-0.12613f, 11, -4.65791f);
+           // }
                 //if(Input.GetKey(KeyCode.Space))
            // {
                    // rb.AddForce(Vector3.zero, ForceMode.Impulse);
