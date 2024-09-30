@@ -7862,6 +7862,7 @@ MonoBehaviour:
   itemPrefab: {fileID: 5978176253910573771, guid: fcd0cfb15559a6146b60730072aa515b, type: 3}
   items:
   - {fileID: 11400000, guid: 04e7d5daa693c464cba938530879dec4, type: 2}
+  - {fileID: 11400000, guid: 478802fbf1c3feb47a388a3f9215aab4, type: 2}
   giveItemBtn: {fileID: 2045774192}
 --- !u!1 &1154433638
 GameObject:
